@@ -6,36 +6,36 @@ Surah surahFromJson(String str) => Surah.fromJson(json.decode(str));
 
 String surahToJson(Surah data) => json.encode(data.toJson());
 
+// class Surah {
+//     Surah({
+//         required this.code,
+//         required this.status,
+//         required this.message,
+//         required this.data,
+//     });
+
+//     int code;
+//     String status;
+//     String message;
+//     List<Datum> data;
+
+//     factory Surah.fromJson(Map<String, dynamic> json) => Surah(
+//         code: json["code"],
+//         status: json["status"],
+//         message: json["message"],
+//         data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+//     );
+
+//     Map<String, dynamic> toJson() => {
+//         "code": code,
+//         "status": status,
+//         "message": message,
+//         "data": List<dynamic>.from(data.map((x) => x.toJson())),
+//     };
+// }
+
 class Surah {
     Surah({
-        required this.code,
-        required this.status,
-        required this.message,
-        required this.data,
-    });
-
-    int code;
-    String status;
-    String message;
-    List<Datum> data;
-
-    factory Surah.fromJson(Map<String, dynamic> json) => Surah(
-        code: json["code"],
-        status: json["status"],
-        message: json["message"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
-    );
-
-    Map<String, dynamic> toJson() => {
-        "code": code,
-        "status": status,
-        "message": message,
-        "data": List<dynamic>.from(data.map((x) => x.toJson())),
-    };
-}
-
-class Datum {
-    Datum({
         required this.number,
         required this.sequence,
         required this.numberOfVerses,
@@ -51,7 +51,7 @@ class Datum {
     Revelation revelation;
     Tafsir tafsir;
 
-    factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+    factory Surah.fromJson(Map<String, dynamic> json) => Surah(
         number: json["number"],
         sequence: json["sequence"],
         numberOfVerses: json["numberOfVerses"],

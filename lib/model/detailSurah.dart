@@ -182,7 +182,7 @@ class Verse {
 
     Number number;
     Meta meta;
-    Text text;
+    DetailText text;
     Translation translation;
     Audio audio;
     VerseTafsir tafsir;
@@ -190,7 +190,7 @@ class Verse {
     factory Verse.fromJson(Map<String, dynamic> json) => Verse(
         number: Number.fromJson(json["number"]),
         meta: Meta.fromJson(json["meta"]),
-        text: Text.fromJson(json["text"]),
+        text: DetailText.fromJson(json["text"]),
         translation: Translation.fromJson(json["translation"]),
         audio: Audio.fromJson(json["audio"]),
         tafsir: VerseTafsir.fromJson(json["tafsir"]),
@@ -338,8 +338,8 @@ class DetailId {
     };
 }
 
-class Text {
-    Text({
+class DetailText {
+    DetailText({
         required this.arab,
         required this.transliteration,
     });
@@ -347,7 +347,7 @@ class Text {
     String arab;
     Transliteration transliteration;
 
-    factory Text.fromJson(Map<String, dynamic> json) => Text(
+    factory DetailText.fromJson(Map<String, dynamic> json) => DetailText(
         arab: json["arab"],
         transliteration: Transliteration.fromJson(json["transliteration"]),
     );
